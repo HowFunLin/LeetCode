@@ -44,6 +44,9 @@ public class Dota2Senate
 	 */
 	private String predictPartyVictory(String senate)
 	{
+		String front;
+		String end;
+		
 		for (int i = 0; i < senate.length(); i++)
 		{
 			char c = senate.charAt(i);
@@ -51,8 +54,8 @@ public class Dota2Senate
 			// 应该贪心地挑选按照投票顺序的下一名对方的议员
 			if (c == 'R')
 			{
-				String front = senate.substring(0, i);
-				String end = senate.substring(i);
+				front = senate.substring(0, i);
+				end = senate.substring(i);
 
 				if (end.indexOf("D") != -1)
 				{
@@ -72,8 +75,8 @@ public class Dota2Senate
 				}
 			} else if (c == 'D')
 			{
-				String front = senate.substring(0, i);
-				String end = senate.substring(i);
+				front = senate.substring(0, i);
+				end = senate.substring(i);
 
 				if (end.indexOf("R") != -1)
 				{
@@ -116,10 +119,10 @@ public class Dota2Senate
 	{
 		int Rnumber = 0;// R阵营总人数
 		int Dnumber = 0;// D阵营总人数
-		int curBanR = 0;// 当前被ban
-		int curBanD = 0;// 当前被ban
-		int totalBanR = 0;// 被ban总数
-		int totalBanD = 0;// 被ban总数
+		int curBanR = 0;// 当前轮中R阵营剩余需被ban
+		int curBanD = 0;// 当前轮中D阵营剩余需被ban
+		int totalBanR = 0;// R阵营被ban总数
+		int totalBanD = 0;// D阵营被ban总数
 
 		char[] chars = senate.toCharArray();
 		boolean flag = true;
@@ -141,7 +144,7 @@ public class Dota2Senate
 
 						if (totalBanD == Dnumber && !flag)
 							return "Radiant";
-					} else
+					} else //该参议员已被之前的对方阵营ban
 					{
 						curBanR--;
 						chars[i] = 'r';

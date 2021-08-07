@@ -1,27 +1,27 @@
 package easy;
 
-import structure.ListNode;
+import struct.ListNode;
 
+@SuppressWarnings("unused")
 public class ReverseLinkedList {
-	public ListNode reverseList(ListNode head) {
-		if (head == null)
-			return head;
+    // 递归解法
+    public ListNode reverseList(ListNode head) {
+        return head == null ? head : recur(head);
+    }
 
-		if (head.next != null) {
-			ListNode end = head.next;
+    private ListNode recur(ListNode node)
+    {
+        ListNode result = null;
 
-			while (end.next != null)
-				end = end.next;
+        if (node.next != null)
+            result = recur(node.next);
 
-			while (head.val != end.val) {
-				ListNode opt = head;
-				head = head.next;
+        if (node.next == null)
+            return node;
 
-				opt.next = end.next;
-				end.next = opt;
-			}
-		}
+        node.next.next = node;
+        node.next = null;
 
-		return head;
-	}
+        return result;
+    }
 }

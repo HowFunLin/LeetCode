@@ -1,26 +1,18 @@
 package easy;
 
-public class Fibonacci
-{
-	public int fib(int n)
-	{
-		if (n == 0)
-			return 0;
-		if (n == 1)
-			return 1;
+@SuppressWarnings("unused")
+public class Fibonacci {
+    public int fibonacci(int n)
+    {
+        int first = 0, second = 1;
 
-		int a = 0;
-		int b = 1;
-		int sum = 0;
+        for (int i = 2; i <= n; i++)
+        {
+            int temp = second;
+            second += first;
+            first = temp;
+        }
 
-		for (int i = 1; i < n; i++)
-		{
-			sum = (a + b) % 1000000007;
-			a = b;
-			b = sum;
-
-		}
-
-		return sum;
-	}
+        return n == 0 ? first : second;
+    }
 }

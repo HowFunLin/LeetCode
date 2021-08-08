@@ -8,6 +8,6 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        int res = new NthDigit().findNthDigit(1000000000);
+        int res = -3 % 2;
     }
 }

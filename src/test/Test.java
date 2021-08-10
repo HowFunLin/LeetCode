@@ -1,13 +1,9 @@
 package test;
 
-import medium.NthDigit;
-import medium.PathInZigzagLabelledBinaryTree;
-
-import java.util.Arrays;
-import java.util.List;
+import medium.SuperUglyNumber;
 
 public class Test {
     public static void main(String[] args) {
-        int res = -3 % 2;
+        int res = new SuperUglyNumber().nthSuperUglyNumber(12, new int[]{2, 7, 13, 19});
     }
 }

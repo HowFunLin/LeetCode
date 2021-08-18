@@ -1,6 +1,6 @@
 package easy;
 
-import structure.ListNode;
+import struct.ListNode;
 
 public class IntersectionOfTwoLinkedList
 {

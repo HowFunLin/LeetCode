@@ -1,6 +1,6 @@
 package medium;
 
-import structure.ListNode;
+import struct.ListNode;
 
 public class SwapNodesInPairs
 {

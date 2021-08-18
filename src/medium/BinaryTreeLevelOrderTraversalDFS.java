@@ -1,11 +1,11 @@
 package medium;
 
+import struct.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-import structure.TreeNode;
 
 public class BinaryTreeLevelOrderTraversalDFS
 {

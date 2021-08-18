@@ -1,6 +1,6 @@
 package easy;
 
-import structure.TreeNode;
+import struct.TreeNode;
 
 public class MinimumDistanceBetweenBSTNodes
 {

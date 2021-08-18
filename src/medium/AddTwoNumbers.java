@@ -1,10 +1,10 @@
 package medium;
 
-import structure.ListNode;
+import struct.ListNode;
 
 public class AddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		ListNode newList = new ListNode();
+		ListNode newList = new ListNode(0);
 		ListNode head = newList;
 		ListNode tail = null;
 
@@ -37,7 +37,7 @@ public class AddTwoNumbers {
 
 			newList.val = value;
 
-			newList.next = new ListNode();
+			newList.next = new ListNode(0);
 			newList = newList.next;
 		}
 

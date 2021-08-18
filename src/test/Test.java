@@ -1,9 +1,7 @@
 package test;
 
-import medium.TranslateNumbersIntoStrings;
-
 public class Test {
     public static void main(String[] args) {
-        System.out.println(new TranslateNumbersIntoStrings().translateNum(12258));
+        System.out.println(1d / 6d);
     }
 }

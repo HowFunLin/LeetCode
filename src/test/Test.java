@@ -1,9 +1,9 @@
 package test;
 
-import week.Double_Game_59;
+import easy.GetMaximumInGeneratedArray;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println(new Double_Game_59().minTimeToType("bza"));
+        System.out.println(new GetMaximumInGeneratedArray().getMaximumGenerated(3));
     }
 }

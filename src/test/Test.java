@@ -1,9 +1,14 @@
 package test;
 
-import easy.GetMaximumInGeneratedArray;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println(new GetMaximumInGeneratedArray().getMaximumGenerated(3));
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+//        System.out.println(calendar.getTime());
+        calendar.add(Calendar.DATE, -20);
+        System.out.println(calendar.get(Calendar.MONTH) + "" + calendar.get(Calendar.DATE));
     }
 }

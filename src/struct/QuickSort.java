@@ -6,10 +6,10 @@ public class QuickSort {
     public static void main(String[] args){  
         int[] nums = new int[]{1, 5, 2, 6, 8};
         quickSort(nums, 0, nums.length - 1);
-        System.out.println(Arrays.toString(nums));;
+        System.out.println(Arrays.toString(nums));
     }
 
-    public static void quickSort(int[] arr, int left, int right)
+    private static void quickSort(int[] arr, int left, int right)
     {
         if (left < right)
         {

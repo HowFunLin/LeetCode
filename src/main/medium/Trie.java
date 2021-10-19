@@ -11,7 +11,7 @@ public class Trie {
     /**
      * 初始化前缀树对象
      */
-    private Trie() {
+    Trie() {
         children = new Trie[26];
         isEnd = false;
     }
@@ -21,7 +21,7 @@ public class Trie {
      *
      * @param word 字符串
      */
-    public void insert(String word) {
+    void insert(String word) {
         Trie node = this;
         char[] chars = word.toCharArray();
 
@@ -77,11 +77,11 @@ public class Trie {
         return node;
     }
 
-    public boolean isEnd() {
+    boolean isEnd() {
         return isEnd;
     }
 
-    public Trie[] getChildren() {
+    Trie[] getChildren() {
         return children;
     }
 }

@@ -3,7 +3,7 @@ package main.medium;
 import java.util.ArrayList;
 import java.util.List;
 
-import static struct.Reverse.reverse;
+import static struct.Reverse.reverseInt;
 
 @SuppressWarnings("unused")
 public class PancakeSorting {
@@ -42,9 +42,9 @@ public class PancakeSorting {
             }
         }
 
-        reverse(arr, 0, index);
+        reverseInt(arr, 0, index);
         result.add(index);
-        reverse(arr, 0, n);
+        reverseInt(arr, 0, n);
         result.add(n);
 
         sort(arr, n - 1);

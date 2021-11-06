@@ -1,6 +1,6 @@
 package main.medium;
 
-import static struct.Reverse.reverse;
+import static struct.Reverse.reverseInt;
 
 @SuppressWarnings("unused")
 public class RotateArray {
@@ -13,8 +13,8 @@ public class RotateArray {
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
 
-        reverse(nums, 0, nums.length - 1);
-        reverse(nums, 0, k - 1);
-        reverse(nums, k, nums.length - 1);
+        reverseInt(nums, 0, nums.length - 1);
+        reverseInt(nums, 0, k - 1);
+        reverseInt(nums, k, nums.length - 1);
     }
 }

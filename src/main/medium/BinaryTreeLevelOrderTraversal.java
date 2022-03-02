@@ -7,9 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTreeLevelOrderTraversalDFS
+public class BinaryTreeLevelOrderTraversal
 {
-	private List<List<Integer>> list = new ArrayList<List<Integer>>();
+	private List<List<Integer>> list = new ArrayList<>();
 	
 	public List<List<Integer>> levelOrder(TreeNode root)
 	{
@@ -23,13 +23,13 @@ public class BinaryTreeLevelOrderTraversalDFS
 	
 	/**
 	 * 深度优先遍历
-	 * @param root
+	 * @param root 当前遍历节点
 	 * @param level 层数标识符
 	 */
 	private void dfs(TreeNode root, int level)
 	{
 		if(list.size() == level)
-			list.add(new ArrayList<Integer>());
+			list.add(new ArrayList<>());
 		
 		list.get(level).add(root.val);
 		
@@ -38,40 +38,37 @@ public class BinaryTreeLevelOrderTraversalDFS
 		if(root.right != null)
 			dfs(root.right, level + 1);
 	}
-}
 
-class BinaryTreeLevelOrderTraversalBFS
-{
-	public List<List<Integer>> levelOrder(TreeNode root)
+	public List<List<Integer>> levelOrderBFS(TreeNode root)
 	{
-		List<List<Integer>> list = new ArrayList<List<Integer>>();
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		
+		List<List<Integer>> list = new ArrayList<>();
+		Queue<TreeNode> queue = new LinkedList<>();
+
 		if(root == null)
 			return list;
-		
+
 		queue.add(root);
-		
+
 		while(!queue.isEmpty())
 		{
-			List<Integer> sub = new ArrayList<Integer>();
+			List<Integer> sub = new ArrayList<>();
 			int size = queue.size();
-			
+
 			for(int i = 0; i < size; i++)
 			{
 				TreeNode temp = queue.poll();
 				sub.add(temp.val);
-				
-				if (temp.left != null) 
-                    queue.offer(temp.left);
-                
-                if (temp.right != null) 
-                    queue.offer(temp.right);
+
+				if (temp.left != null)
+					queue.offer(temp.left);
+
+				if (temp.right != null)
+					queue.offer(temp.right);
 			}
-			
+
 			list.add(sub);
 		}
-		
+
 		return list;
 	}
 }

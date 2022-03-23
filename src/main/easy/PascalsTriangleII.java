@@ -16,25 +16,11 @@ public class PascalsTriangleII {
 
         res.add(1);
 
-        if (rowIndex == 0)
-            return res;
+        for (int i = 1; i <= rowIndex; i++) {
+            res.add(0);
 
-        res.add(1);
-
-        if (rowIndex == 1)
-            return res;
-
-        for (int i = 2; i <= rowIndex; i++) {
-            List<Integer> temp = new ArrayList<>();
-
-            temp.add(1);
-
-            for (int j = 1; j < i; j++)
-                temp.add(res.get(j - 1) + res.get(j));
-
-            temp.add(1);
-
-            res = temp;
+            for (int j = i; j > 0; j--)
+                res.set(j, res.get(j) + res.get(j - 1));
         }
 
         return res;

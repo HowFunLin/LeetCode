@@ -10,12 +10,19 @@ public class FindTheWinnerOfTheCircularGame {
      * @return 游戏的获胜者
      */
     public int findTheWinner(int n, int k) {
-        int res = 1; // 当只有一个参赛者时，结果为自己
+//        int res = 1; // 当只有一个参赛者时，结果为自己
+//
+//        // 每多一人胜者为原胜者 + k
+//        for (int i = 2; i <= n; i++)
+//            res = (res + k) % i == 0 ? i : (res + k) % i;
+//
+//        return res;
 
-        // 每多一人胜者为原胜者 + k
-        for (int i = 2; i <= n; i++)
-            res = (res + k) % i == 0 ? i : (res + k) % i;
+        if (n == 1)
+            return 1;
 
-        return res;
+        // 例如第一种情况，第一轮编号 k 输掉游戏，第二轮起始值为 k + 1 => 1，因此节点的编号变化为 findTheWinner(n - 1, k) + k
+        // 需要对计算出的编号进行求余，且由于不存在 0，因此需要 -1 求余再 +1
+        return (findTheWinner(n - 1, k) + k - 1) % n + 1;
     }
 }

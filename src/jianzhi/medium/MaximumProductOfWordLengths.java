@@ -1,4 +1,4 @@
-package jianzhi.easy;
+package jianzhi.medium;
 
 @SuppressWarnings("unused")
 public class MaximumProductOfWordLengths {

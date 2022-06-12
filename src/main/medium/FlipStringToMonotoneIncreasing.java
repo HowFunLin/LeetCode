@@ -1,4 +1,4 @@
-package jianzhi.medium;
+package main.medium;
 
 @SuppressWarnings("unused")
 public class FlipStringToMonotoneIncreasing {
